@@ -1,11 +1,17 @@
+/* Global styling */
+html {
+    scroll-behavior: smooth
+}
+
 body {
     padding: 0;
     margin: 0;
     background: #000000;
 }
 
+/* The following styling is for the navbar */
 .navbar {
-    z-index: 90000;
+    z-index: 900;
     background: #000000;
     top: 0;
     position: sticky;
@@ -13,49 +19,42 @@ body {
 }
 
 .nav-link,
-
 .navbar-brand {
     color: #fff;
     cursor: pointer;
-    font-family: 'Racing Sans One', cursive;
-    font-size: 150%;
-}
-
-@media (max-width: 2500px) {
-    .navbar-brand {
-        color: #fff;
-        cursor: pointer;
-        font-family: 'Racing Sans One', cursive;
-        font-size: 100%;
-    }
+    font-size: 1.5rem;
+    margin-left: 2vw;
 }
 
 .nav-link {
     margin-right: 1em !important;
 }
 
-.nav-link:hover {
-    color: #000;
+.nav-link:hover,
+.navbar-brand:hover {
+    color: rgb(252, 101, 0);
 }
 
 .navbar-collapse {
     justify-content: flex-end;
 }
 
+/* This is the first page styling */
 header {
-    background-image: url('images/pizzabakgrund.jpg');
+    background-image: url('images/pizzabackground.jpg');
     background-size: cover;
     background-position: center;
-    width: 100%;
+    width: 100vw;
     opacity: 0.7;
+    height: 100vh;
 }
 
 .description {
     left: 50%;
-    position: absolute;
     top: 45%;
     transform: translate(-50%, -55%);
     text-align: center;
+    position: absolute;
 }
 
 .description h1 {
@@ -64,36 +63,319 @@ header {
 
 .description p {
     color: rgb(255, 255, 255);
-    font-size: 130%;
+    font-size: 1.3rem;
     line-height: 1.5;
 }
 
-@media (max-width: 2500px) {
+h1 {
+    font-size: 600%;
+    font-weight: bold;
+}
+
+/* This is to save duplicated code. This makes most styling the same font. */
+#nav-Logo,
+.footer,
+p,
+h1,
+.openHours,
+.navbar-brand,
+.nav-link,
+.findUs {
+    font-family: 'Racing Sans One', cursive;
+}
+
+/* The following styling is for the Open Hours Page */
+.openHours {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/pizzeria.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+}
+
+#openHoursInfo {
+    font-size: 3rem;
+    color: #fff;
+    padding-bottom: 40px;
+}
+
+/* The follwing styling is for the Find Us page */
+.findUs {
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/pizzarug.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+}
+
+#googleMap {
+    margin-top: 5vh;
+    margin-left: 10vh;
+    border-color: red;
+    border-width: 5px;
+    border-radius: 5%;
+    border-style: outset;
+    width: 40vw;
+    height: 60vh;
+}
+
+#findUsTitle {
+    text-align: center;
+}
+
+#infoBox {
+    background-color: rgba(255, 0, 0, 0.486);
+    margin-right: 10vh;
+    height: 60vh;
+    width: 40vw;
+    float: right;
+    margin-top: 5vh;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5%;
+    border-color: #fff;
+    text-align: center;
+}
+
+.fu-info-main {
+    font-size: 3rem;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+.fu-info {
+    font-size: 2rem;
+}
+
+#facebook {
+    font-size: 4rem;
+    background-color: white;
+    border-radius: 50%;
+    float: left;
+    margin-left: 10vh;
+}
+
+#twitter {
+    font-size: 4rem;
+    margin-right: 1%;
+}
+
+#instagram {
+    font-size: 4rem;
+    float: right;
+    margin-right: 10vh;
+    color: purple;
+}
+
+#instagram:hover,
+#twitter:hover,
+#facebook:hover {
+    font-size: 4.2rem;
+    transition: .1s;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+/* Footer styling */
+.footer {
+    color: rgb(161, 159, 159);
+}
+
+h6 {
+    text-decoration: underline;
+}
+
+/* The following code is for 2k-720p resolutions */
+@media (max-width: 2000px) and (min-width:500px) {
+    .navbar-brand,
+    .nav-link {
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
     .description p {
         color: rgb(255, 255, 255);
         font-size: 80%;
         line-height: 1.5;
     }
-}
 
-h1 {
-    font-family: 'Racing Sans One', cursive;
-    font-size: 600%;
-    font-weight: bold;
-}
-
-@media (max-width: 2500px) {
     h1 {
-        font-family: 'Racing Sans One', cursive;
         font-size: 300%;
         font-weight: bold;
     }
+
+    .fu-info-main {
+        font-size: 1.5rem;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top: 2vh;
+    }
+
+    .fu-info {
+        font-size: 1rem;
+    }
+
+    #openHoursInfo {
+        font-size: 1.3rem;
+        color: #fff;
+        padding-bottom: 40px;
+    }
+
+    #facebook {
+        font-size: 3rem;
+        background-color: white;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10vh;
+    }
+
+    #twitter {
+        font-size: 3rem;
+        margin-right: 1%;
+    }
+
+    #instagram {
+        font-size: 3rem;
+        float: right;
+        margin-right: 10vh;
+        color: purple;
+    }
+
+    #instagram:hover,
+    #twitter:hover,
+    #facebook:hover {
+        font-size: 3.2rem;
+        transition: .1s;
+
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    /* This is to save duplicated code. This makes most styling the same font. */
+    h1,
+    .navbar-brand,
+    .nav-link {
+        font-family: 'Racing Sans One', cursive;
+    }
 }
 
-p {
-    font-family: 'Racing Sans One', cursive;
-}
+/* This styling is for phones */
+@media (max-width: 500px) {
+    .navbar {
+        z-index: 900;
+        background: #000000c5;
+        top: 0;
+        position: sticky;
+    }
 
-#uppeTillV {
-    font-family: 'Racing Sans One', cursive;
+    .navbar-brand,
+    .nav-link {
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-size: 1.5rem;
+        margin-left: 25vw;
+    }
+
+    .description p {
+        color: rgb(255, 255, 255);
+        font-size: 80%;
+        line-height: 1.5;
+        width: 100vw;
+    }
+
+    h1 {
+        font-size: 300%;
+        font-weight: bold;
+    }
+
+    .openHours {
+        height: 100vh;
+    }
+
+    #openHoursInfo {
+        font-size: 1.9rem;
+        color: #fff;
+        padding-bottom: 40px;
+    }
+
+    #findUsDIV {
+        height: 145vh;
+    }
+
+    #infoBox {
+        width: 90vw;
+        height: 60vh;
+        margin-right: 2.5vh;
+    }
+
+    #googleMap {
+        width: 100vw;
+        margin-top: 6vh;
+        margin-left: 0vh;
+
+        border-color: rgb(0, 0, 0);
+        border-width: 0px;
+        border-radius: 2%;
+        border-style: outset;
+    }
+
+    .fu-info-main {
+        font-size: 2rem;
+        text-decoration: underline;
+        font-weight: bold;
+        margin-top: 2vh;
+    }
+
+    .fu-info {
+        font-size: 1.5rem;
+    }
+
+    #facebook {
+        font-size: 3rem;
+        background-color: white;
+        border-radius: 50%;
+        float: left;
+        margin-left: 10vh;
+    }
+
+    #twitter {
+        font-size: 3rem;
+        margin-right: 1%;
+    }
+
+    #instagram {
+        font-size: 3rem;
+        float: right;
+        margin-right: 10vh;
+        color: purple;
+    }
+
+    #instagram:hover,
+    #twitter:hover,
+    #facebook:hover {
+        font-size: 3.2rem;
+        transition: .1s;
+
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    /* This is to save duplicated code. This makes most styling the same font. */
+    h1,
+    .navbar-brand,
+    .nav-link {
+        font-family: 'Racing Sans One', cursive;
+    }
 }

@@ -1,41 +1,159 @@
 <!DOCTYPE html>
-<html lang ="sv">
+<html lang="sv">
 <head>
 	<meta charset=UTF-8>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="jquery-3.5.1.min.js"></script>
-    <script src="index.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- The following links are related to bootstrap, google fonts and css. -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="index.css">
 
+	<!-- These links are for google fonts. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
 
+	<link rel="icon" type="image/x-icon" href="images/pizzaicon.png">
+	<!-- This link is for the social media icons library-->
+	<script src="https://kit.fontawesome.com/0b2436849d.js" crossorigin="anonymous"></script>
 
+	<title>Pizzeria Rafiki</title>
 
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
-
-
-
-
-
-<title>Pizzeria Rafiki</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md">
-	<a class="navbar-brand" href="#" id="uppeTillV">Pizzeria rafiki</a>
-	<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-</nav>
-<header class="page-header header container-fluid">  </header>
-<div class="description">
-    <h1>Pizzeria Rafiki</h1>
-    <p>--- Äkta Napoliansk Pizza Sedan 2017 ---</p>
-</div>
-<div class="overlay"></div>
+	<!-- The following segment is the navbar code made with bootstrap -->
+	<nav class="navbar navbar-expand-md">
+		<a class="navbar-brand" href="#" id="nav-Logo">Pizzeria Rafiki</a>
+		<button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+			data-bs-target="#main-navigation">
+		</button>
+		<div class="navbar-collapse collapse" id="main-navigation">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#openHoursDIV" id="openHoursButton">Öppettider</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#findUsDIV" id="findUsButton">Hitta oss</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- This is the main welcoming page -->
+	<header class="page-header header container-fluid"> </header>
+	<div class="description">
+		<h1>Pizzeria Rafiki</h1>
+		<p>--- Äkta Napoliansk Pizza Sedan 2017 ---</p>
+	</div>
+
+	<!-- This is the open hours page -->
+	<div class="openHours" id="openHoursDIV">
+		<h1 id="openHoursTitle">Öppettider</h1>
+		<p id="openHoursInfo">
+			Måndagar 10-22<br> <br>
+
+			Tisdagar 10-22<br> <br>
+
+			Onsdagar 10-22<br> <br>
+
+			Torsdagar 10-22<br> <br>
+
+			Fredagar 10-23<br> <br>
+
+			Lördagar 12-23<br> <br>
+
+			Söndagar 12-20 <br> <br>
+		</p>
+	</div>
+
+	<!-- This is the page with info and map -->
+	<div class="findUs" id="findUsDIV">
+		<h1 id="findUsTitle">Hitta Hit!</h1>
+		<div id="infoBox">
+			<h1 class="fu-info-main">
+				Vår Information
+			</h1>
+			<h2 class="fu-info-main">
+				Adress
+			</h2>
+			<p class="fu-info">
+				Kungsvägen 2B 642 34 Flen
+			</p>
+			<h2 class="fu-info-main">
+				Telefonnummer
+			</h2>
+			<p class="fu-info">
+				0630-555-555
+			</p>
+			<h2 class="fu-info-main">
+				Mail
+			</h2>
+			<p class="fu-info">
+				info@ntig-uppsala.github.io
+			</p>
+			<!-- These are the fontawesome icons -->
+			<a href="https://www.facebook.com/ntiuppsala/" id="facebook" class="fa-brands fa-facebook"
+				style="color: #005eff;" target=”_blank”></a>
+
+			<a href="https://twitter.com/ntiuppsala" id="twitter" class="fa-brands fa-twitter" style="color: #005eff;"
+				target=”_blank”></a>
+
+			<a href="https://www.instagram.com/ntiuppsala/" id="instagram" class="fa-brands fa-instagram"
+				target=”_blank”></a>
+		</div>
+		<!-- Google Maps interactive map -->
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2051.931861647693!2d16.591982477839476!3d59.04985333335932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465ec4abc74e82c5%3A0x4642c0225f90c202!2sKungsv%C3%A4gen%202%2C%20642%2034%20Flen!5e0!3m2!1ssv!2sse!4v1693307415845!5m2!1ssv!2sse"
+			allowfullscreen="" loading="lazy" id="googleMap" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+
+	<!-- Bootstrap footer -->
+	<footer class="text-center text-lg-start bg-black text-muted">
+
+		<section class="footer">
+			<div class="container text-center text-md-start mt-5">
+				<div class="row mt-3">
+					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+						<h6 class="text-uppercase fw-bold mb-4">
+							Pizzeria Rafiki
+						</h6>
+						<p>
+							Sedan 2017 har vi gjort lyxiga napolianska pizzor i hjärtat av Flen.
+						</p>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+						<h6 class="text-uppercase fw-bold mb-4">
+							Sidor
+						</h6>
+						<p>
+							<a href="#" class="text-reset">Rafiki</a>
+						</p>
+						<p>
+							<a href="#openHoursDIV" class="text-reset">Öppettider</a>
+						</p>
+						<p>
+							<a href="#findUsDIV" class="text-reset">Hitta Oss</a>
+						</p>
+					</div>
+
+					<!-- Footer Info  -->
+					<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+						<h6 class="text-uppercase fw-bold mb-4">Kontakta oss</h6>
+						<p>
+							<i class="fas fa-home me-3 text-secondary"></i> Kungsvägen 2B 642 34 Flen
+						</p>
+						<p>
+							<i class="fas fa-envelope me-3 text-secondary"></i>
+							info@ntig-uppsala.github.io
+						</p>
+						<p>
+							<i class="fas fa-phone me-3 text-secondary"></i> 0630-555-555
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
 </body>
 </html>

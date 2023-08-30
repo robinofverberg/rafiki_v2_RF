@@ -2,7 +2,7 @@ from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from os import path, getcwd
-
+from selenium.webdriver.common.by import By
 
 class TestHemsida(TestCase):
 
@@ -36,8 +36,7 @@ class TestHemsida(TestCase):
     def tearDown(self):
         self.browser.get('about:blank')  # goes to an empty page to avoid earlier tests affecting current test
 
-
-    # TESTS START HERE
+    # tests start here
     def testCompanyName(self):
         # opens the file index.html in project root directory
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -50,6 +49,51 @@ class TestHemsida(TestCase):
     def testTitle(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Pizzeria Rafiki", self.browser.title)
+
+    def testPhoneNumber(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("0630-555-555", self.browser.page_source)
+
+    def testMail(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
+
+    def testAdress(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("Kungsvägen 2B 642 34 Flen", self.browser.page_source)
+
+    def testFacebook(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("https://www.facebook.com/ntiuppsala/", self.browser.page_source)
+
+    def testInstagram(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("https://www.instagram.com/ntiuppsala/", self.browser.page_source)
+
+    def testTwitter(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.assertIn("https://twitter.com/ntiuppsala", self.browser.page_source)
+
+    def testOpenHoursButton(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.find_element(By.ID, 'openHoursButton').click()
+        self.assertIn("#openHours", self.browser.current_url)
+
+    def testFindUs(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        self.browser.find_element(By.ID, 'findUsButton').click()
+        self.assertIn("#findUs", self.browser.current_url)
+
+    def testOpenHours(self):
+        self.browser.get(path.join(getcwd(), 'index.html'))
+        paragraph = self.browser.find_element(By.ID, 'openHoursInfo')
+        self.assertIn("Måndagar 10-22", paragraph.text)
+        self.assertIn("Tisdagar 10-22", paragraph.text)
+        self.assertIn("Onsdagar 10-22", paragraph.text)
+        self.assertIn("Torsdagar 10-22", paragraph.text)
+        self.assertIn("Fredagar 10-23", paragraph.text)
+        self.assertIn("Lördagar 12-23", paragraph.text)
+        self.assertIn("Söndagar 12-20", paragraph.text)
 
 # exists to ensure tests run if file is run as a normal python-program
 if __name__ == '__main__':
