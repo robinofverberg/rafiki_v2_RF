@@ -17,3 +17,7 @@ Tests are run from the file [main-branch]testing/testrafiki.py
 ### Development environment
 - Code Editor: Visual Studio Code 2022 Version 1.66
 - Google Chrome is the browser we use for testing.
+#### Programming languages
+- HTML5 for creating websites
+- CSS3 and Bootstrap 5.2.3 for styling
+- Python 3.11.5 and Selenium 4.11.2 for testing
