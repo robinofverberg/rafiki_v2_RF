@@ -194,43 +194,66 @@ h6 {
 
 /* The following code is for 2k-720p resolutions */
 @media (max-width: 2000px) and (min-width:500px) {
+
     .navbar-brand,
     .nav-link {
         color: #fff;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     .description p {
         color: rgb(255, 255, 255);
-        font-size: 80%;
+        font-size: 1.5rem;
         line-height: 1.5;
+        width: 100vw;
     }
 
     h1 {
-        font-size: 300%;
+        font-size: 5rem;
         font-weight: bold;
     }
 
+    #findUsDIV {
+        height: 150vh;
+    }
+
+    #infoBox {
+        width: 90vw;
+        height: 65vh;
+        margin-right: 2.5vh;
+    }
+
+    #googleMap {
+        width: 100vw;
+        margin-top: 6vh;
+        margin-left: 0vh;
+
+        border-color: rgb(0, 0, 0);
+        border-width: 0px;
+        border-radius: 2%;
+        border-style: outset;
+    }
+
     .fu-info-main {
-        font-size: 1.5rem;
+        font-size: 3rem;
         text-decoration: underline;
         font-weight: bold;
         margin-top: 2vh;
     }
 
     .fu-info {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
     #openHoursInfo {
-        font-size: 1.3rem;
+        font-size: 4.5vw;
         color: #fff;
         padding-bottom: 40px;
     }
 
     #facebook {
-        font-size: 3rem;
+        font-size: 4rem;
         background-color: white;
         border-radius: 50%;
         float: left;
@@ -238,12 +261,12 @@ h6 {
     }
 
     #twitter {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-right: 1%;
     }
 
     #instagram {
-        font-size: 3rem;
+        font-size: 4rem;
         float: right;
         margin-right: 10vh;
         color: purple;
@@ -298,23 +321,23 @@ h6 {
         font-weight: bold;
     }
 
-    .openHours {
+    #openHoursDIV {
         height: 100vh;
     }
 
     #openHoursInfo {
-        font-size: 1.9rem;
+        font-size: 7vw;
         color: #fff;
         padding-bottom: 40px;
     }
 
     #findUsDIV {
-        height: 145vh;
+        height: 150vh;
     }
 
     #infoBox {
         width: 90vw;
-        height: 60vh;
+        height: 65vh;
         margin-right: 2.5vh;
     }
 
