@@ -89,24 +89,28 @@ h1,
     text-align: center;
     width: 100%;
     height: 100vh;
-    background-image: url('images/pizzeria.jpg');
+    background-image: url('images/oppettiderbakgrund.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 70px;
 }
 
 #openHoursInfo {
-    font-size: 5rem;
-    margin: 5%;
-    color: #fff;
+    font-size: 4rem;
+    color: #ffffff;
     padding-bottom: 40px;
+    margin: 5%;
+}
+
+#openHoursTitle {
+    color: #818080;
 }
 
 /* The follwing styling is for the Find Us page */
 .findUs {
     width: 100%;
     height: 100vh;
-    background-image: url('images/pizzarug.jpg');
+    background-image: url('images/pizzaoven.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 70px;
@@ -115,7 +119,7 @@ h1,
 #googleMap {
     margin-top: 5vh;
     margin-left: 10vh;
-    border-color: red;
+    border-color: rgb(255, 255, 255);
     border-width: 5px;
     border-radius: 5%;
     border-style: outset;
@@ -125,10 +129,11 @@ h1,
 
 #findUsTitle {
     text-align: center;
+    color: #ffffff;
 }
 
 #infoBox {
-    background-color: rgba(255, 0, 0, 0.486);
+    background-color: rgba(233, 233, 233, 0.434);
     margin-right: 10vh;
     height: 60vh;
     width: 40vw;
@@ -154,29 +159,32 @@ h1,
 
 #facebook {
     font-size: 4rem;
-    background-color: white;
+    
     border-radius: 50%;
     float: left;
     margin-left: 10vh;
+    color: black;
 }
 
 #twitter {
     font-size: 4rem;
     margin-right: 1%;
+    color: black;
 }
 
 #instagram {
     font-size: 4rem;
     float: right;
     margin-right: 10vh;
-    color: purple;
+    color: rgb(0, 0, 0);
 }
 
 #instagram:hover,
 #twitter:hover,
 #facebook:hover {
-    font-size: 4.2rem;
+    font-size: 4.1rem;
     transition: .1s;
+    transform: translateY(-10%);
 }
 
 a,
@@ -202,6 +210,9 @@ h6 {
         cursor: pointer;
         font-size: 2rem;
     }
+    .nav-link{
+        margin-right: 40vw;
+    }
 
     .description p {
         color: rgb(255, 255, 255);
@@ -215,14 +226,14 @@ h6 {
         font-weight: bold;
     }
 
-    #findUsDIV {
+    #hittaoss {
         height: 150vh;
     }
 
     #infoBox {
         width: 90vw;
         height: 65vh;
-        margin-right: 2.5vh;
+        margin-right: 5vw;
     }
 
     #googleMap {
@@ -248,7 +259,7 @@ h6 {
     }
 
     #openHoursInfo {
-        font-size: 4.5vw;
+        font-size: 3.5vw;
         color: #fff;
         padding-bottom: 40px;
     }
@@ -258,7 +269,7 @@ h6 {
         background-color: white;
         border-radius: 50%;
         float: left;
-        margin-left: 10vh;
+        margin-left: 50vh;
     }
 
     #twitter {
@@ -269,7 +280,7 @@ h6 {
     #instagram {
         font-size: 4rem;
         float: right;
-        margin-right: 10vh;
+        margin-right: 50vh;
         color: purple;
     }
 
@@ -290,6 +301,9 @@ h6 {
     .navbar-brand,
     .nav-link {
         font-family: 'Racing Sans One', cursive;
+    }
+    .footer{
+        font-size: 1.1rem;
     }
 }
 
@@ -322,17 +336,19 @@ h6 {
         font-weight: bold;
     }
 
-    #openHoursDIV {
+    /* This is in swedish since it is visible to the public */
+    #oppettider {
         height: 100vh;
     }
 
     #openHoursInfo {
-        font-size: 7vw;
+        font-size: 2.5rem;
         color: #fff;
         padding-bottom: 40px;
     }
 
-    #findUsDIV {
+    /* This is in swedish since it is visible to the public */
+    #hittaoss {
         height: 150vh;
     }
 
@@ -366,10 +382,12 @@ h6 {
 
     #facebook {
         font-size: 3rem;
-        background-color: white;
+        background-color: rgb(0, 0, 0);
         border-radius: 50%;
         float: left;
         margin-left: 10vh;
+        color: #000000;
+        background-color: #ffffff00;
     }
 
     #twitter {
@@ -381,7 +399,7 @@ h6 {
         font-size: 3rem;
         float: right;
         margin-right: 10vh;
-        color: purple;
+        color: rgb(0, 0, 0);
     }
 
     #instagram:hover,
@@ -389,6 +407,7 @@ h6 {
     #facebook:hover {
         font-size: 3.2rem;
         transition: .1s;
+       
 
     }
 

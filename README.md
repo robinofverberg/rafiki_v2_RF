@@ -13,10 +13,12 @@ Tests are run from the file [main-branch]testing/testrafiki.py
 - All test functions have to start with "test".
 - English file names only contain lowercase letters.
 - Comments are positioned above the code it describes, are only in English and start with lowercase letters in Python but start with uppercase letters in HTML and CSS.
+- Python files follow the Black Formatter standard and Pylint with the exception of C0111 and method-naming-style=camelCase.
 
 ### Development environment
 - Code Editor: Visual Studio Code 2022 Version 1.66
 - Google Chrome is the browser we use for testing.
+  
 #### Programming languages
 - HTML5 for creating websites
 - CSS3 and Bootstrap 5.2.3 for styling
