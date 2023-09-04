@@ -214,7 +214,7 @@ h6 {
         font-weight: bold;
     }
 
-    #findUsDIV {
+    #hittaoss {
         height: 150vh;
     }
 
@@ -321,7 +321,8 @@ h6 {
         font-weight: bold;
     }
 
-    #openHoursDIV {
+    /* This is in swedish since it is visible to the public */
+    #oppettider {
         height: 100vh;
     }
 
@@ -331,7 +332,8 @@ h6 {
         padding-bottom: 40px;
     }
 
-    #findUsDIV {
+    /* This is in swedish since it is visible to the public */
+    #hittaoss {
         height: 150vh;
     }
 

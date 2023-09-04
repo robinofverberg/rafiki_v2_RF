@@ -4,21 +4,21 @@ from selenium.webdriver.chrome.options import Options
 from os import path, getcwd
 from selenium.webdriver.common.by import By
 
-class TestHemsida(TestCase):
+class TestWebsite(TestCase):
 
     # settings for how the tests are run
-    stangintebrowsern = True  # if True browser stays open after tests are run, otherwise browser closes
-    gomfonstret = False  # if False shows browser while tests run
+    dontclosebrowser = True  # if True browser stays open after tests are run, otherwise browser closes
+    hidewindow = False  # if False shows browser while tests run
 
     # setUpClass runs BEFORE FIRST test
     @classmethod
     def setUpClass(cls):
         chr_options = Options()
 
-        if cls.stangintebrowsern:
+        if cls.dontclosebrowser:
             chr_options.add_experimental_option("detach", True)
 
-        if cls.gomfonstret:
+        if cls.hidewindow:
             chr_options.add_argument("--headless")
 
         cls.browser = webdriver.Chrome(options=chr_options)
@@ -58,7 +58,7 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("info@ntig-uppsala.github.io", self.browser.page_source)
 
-    def testAdress(self):
+    def testAddress(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Kungsvägen 2B 642 34 Flen", self.browser.page_source)
 
