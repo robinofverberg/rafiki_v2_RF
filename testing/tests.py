@@ -44,7 +44,7 @@ class TestWebsite(TestCase):
 
     def testSlogan(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
-        self.assertIn("--- Äkta Napoliansk Pizza Sedan 2017 ---", self.browser.page_source)
+        self.assertIn("--- Äkta napolitansk pizza sedan 2017 ---", self.browser.page_source)
 
     def testTitle(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
@@ -87,10 +87,7 @@ class TestWebsite(TestCase):
     def testOpenHours(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         paragraph = self.browser.find_element(By.ID, 'openHoursInfo')
-        self.assertIn("Måndagar 10-22", paragraph.text)
-        self.assertIn("Tisdagar 10-22", paragraph.text)
-        self.assertIn("Onsdagar 10-22", paragraph.text)
-        self.assertIn("Torsdagar 10-22", paragraph.text)
+        self.assertIn("Mån - Tors 10-22", paragraph.text)
         self.assertIn("Fredagar 10-23", paragraph.text)
         self.assertIn("Lördagar 12-23", paragraph.text)
         self.assertIn("Söndagar 12-20", paragraph.text)
