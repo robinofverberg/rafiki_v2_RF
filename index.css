@@ -96,7 +96,8 @@ h1,
 }
 
 #openHoursInfo {
-    font-size: 3rem;
+    font-size: 5rem;
+    margin: 5%;
     color: #fff;
     padding-bottom: 40px;
 }
