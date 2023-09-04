@@ -77,12 +77,12 @@ class TestWebsite(TestCase):
     def testOpenHoursButton(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.ID, 'openHoursButton').click()
-        self.assertIn("#openHours", self.browser.current_url)
+        self.assertIn("#oppettider", self.browser.current_url)
 
     def testFindUs(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.browser.find_element(By.ID, 'findUsButton').click()
-        self.assertIn("#findUs", self.browser.current_url)
+        self.assertIn("#hittaoss", self.browser.current_url)
 
     def testOpenHours(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
