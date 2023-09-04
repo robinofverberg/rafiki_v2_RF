@@ -96,9 +96,10 @@ h1,
 }
 
 #openHoursInfo {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #fff;
     padding-bottom: 40px;
+    margin: 5%;
 }
 
 /* The follwing styling is for the Find Us page */
