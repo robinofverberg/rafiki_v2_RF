@@ -12,7 +12,7 @@ class TestWebsite(TestCase):
     dontclosebrowser = (
         True  # if True browser stays open after tests are run, otherwise browser closes
     )
-    hidewindow = True  # if False shows browser while tests run
+    hidewindow = False  # if False shows browser while tests run
 
     # setUpClass runs BEFORE FIRST test
     @classmethod
@@ -183,6 +183,26 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "homePageFooter").click()
         sleep(2)
         self.browser.get_screenshot_as_file("testIMG/Phone/HOME_iPhone_IMG.jpeg")
+
+    def testValidatorHTML(self):
+        self.browser.get("https://validator.w3.org/#validate_by_upload")
+        self.browser.find_element(By.ID, "uploaded_file").send_keys(
+            path.join(getcwd(), "index.html")
+        )
+        self.browser.find_element(
+            By.XPATH, '//*[@id="validate-by-upload"]/form/p[3]/a'
+        ).click()
+        self.assertIn("No errors or warnings to show", self.browser.page_source)
+
+    def testValidatorCSS(self):
+        self.browser.get("https://jigsaw.w3.org/css-validator/#validate_by_upload")
+        self.browser.find_element(By.ID, "file").send_keys(
+            path.join(getcwd(), "index.css")
+        )
+        self.browser.find_element(
+            By.XPATH, '//*[@id="validate-by-upload"]/form/p[3]/label/a/span'
+        ).click()
+        self.assertIn("Gratulerar! Inga fel har hittats", self.browser.page_source)
 
 
 # exists to ensure tests run if file is run as a normal python-program
