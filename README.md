@@ -9,7 +9,7 @@ Tests are run from the file [main-branch]testing/testrafiki.py
 
 ### Coding standard
 - All variables are in English, start with lowercase letters and subsequent words start with uppercase letters.
-- We use the tab button whenever we need four blank spaces in our code.
+- We use four blank spaces for indentation.
 - All test functions have to start with "test".
 - English file names only contain lowercase letters.
 - Comments are positioned above the code it describes, are only in English and start with lowercase letters in Python but start with uppercase letters in HTML and CSS.
