@@ -1,4 +1,5 @@
 from os import getcwd, path
+from time import sleep
 from unittest import TestCase, main
 
 from selenium import webdriver
@@ -11,7 +12,7 @@ class TestWebsite(TestCase):
     dontclosebrowser = (
         True  # if True browser stays open after tests are run, otherwise browser closes
     )
-    hidewindow = False  # if False shows browser while tests run
+    hidewindow = True  # if False shows browser while tests run
 
     # setUpClass runs BEFORE FIRST test
     @classmethod
@@ -33,7 +34,7 @@ class TestWebsite(TestCase):
 
     # setUp runs BEFORE EVERY TEST
     def setUp(self):
-        pass  # does nothing
+        self.browser.maximize_window()
 
     # tearDown runs AFTER EVERY TEST
     def tearDown(self):
@@ -98,6 +99,90 @@ class TestWebsite(TestCase):
         self.assertIn("Fredagar 10-23", paragraph.text)
         self.assertIn("Lördagar 12-23", paragraph.text)
         self.assertIn("Söndagar 12-20", paragraph.text)
+
+    def testFooterLinks(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        footer = self.browser.find_element(By.CLASS_NAME, "footer")
+        self.assertIn("Öppettider", footer.text)
+        self.assertIn("Hitta oss", footer.text)
+        self.assertIn("Rafiki", footer.text)
+
+    def testHomePage(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.find_element(By.ID, "nav-Logo").click()
+        self.assertIn("#", self.browser.current_url)
+
+    def testFooterDesc(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        footer = self.browser.find_element(By.CLASS_NAME, "footer")
+        self.assertIn(
+            "Sedan 2017 har vi gjort lyxiga napolitanska pizzor i hjärtat av Flen.",
+            footer.text,
+        )
+        self.assertIn("PIZZERIA RAFIKI", footer.text)
+        self.assertIn("KONTAKTA OSS", footer.text)
+
+    def testFooterContactInfo(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        footer = self.browser.find_element(By.CLASS_NAME, "footer")
+        self.assertIn("Kungsvägen 2B 642 34 Flen", footer.text)
+        self.assertIn("0630-555-555", footer.text)
+        self.assertIn("info@ntig-uppsala.github.io", footer.text)
+
+    def testGoogleMaps(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.assertIn(
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2051.931861647693!2d16.591982477839476!3d59.04985333335932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465ec4abc74e82c5%3A0x4642c0225f90c202!2sKungsv%C3%A4gen%202%2C%20642%2034%20Flen!5e0!3m2!1ssv!2sse!4v1693307415845!5m2!1ssv!2sse",
+            self.browser.page_source,
+        )
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(1)
+        self.browser.get_screenshot_as_file("images/googleMapIMG.jpeg")
+
+    def testResSite1920(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(1920, 1080, self.browser.window_handles[0])
+        self.browser.find_element(By.ID, "openHoursButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/OPENHOURS1080pIMG.jpeg")
+        self.browser.find_element(By.ID, "findUsButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/FINDUS1080pIMG.jpeg")
+        self.browser.find_element(By.ID, "nav-Logo").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/HOMEPAGE1080pIMG.jpeg")
+
+    def testResSite4k(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(2560, 1440, self.browser.window_handles[0])
+        self.browser.find_element(By.ID, "openHoursButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/OPENHOURS_4K_IMG.jpeg")
+        self.browser.find_element(By.ID, "findUsButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/FINDUS_4K_IMG.jpeg")
+        self.browser.find_element(By.ID, "nav-Logo").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/HOMEPAGE_4K_IMG.jpeg")
+
+    def testResSiteIphone(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(390, 844, self.browser.window_handles[0])
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "findUsFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/FINDUS_iPhone_IMG.jpeg")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "openHoursFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/OPENHOURS_iPhone_IMG.jpeg")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "homePageFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/HOME_iPhone_IMG.jpeg")
 
 
 # exists to ensure tests run if file is run as a normal python-program
