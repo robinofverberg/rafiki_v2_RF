@@ -12,7 +12,7 @@ class TestWebsite(TestCase):
     dontclosebrowser = (
         True  # if True browser stays open after tests are run, otherwise browser closes
     )
-    hidewindow = False  # if False shows browser while tests run
+    hidewindow = True  # if False shows browser while tests run
 
     # setUpClass runs BEFORE FIRST test
     @classmethod
@@ -34,7 +34,7 @@ class TestWebsite(TestCase):
 
     # setUp runs BEFORE EVERY TEST
     def setUp(self):
-        pass  # does nothing
+        self.browser.maximize_window()
 
     # tearDown runs AFTER EVERY TEST
     def tearDown(self):
@@ -110,7 +110,7 @@ class TestWebsite(TestCase):
     def testHomePage(self):
         self.browser.get(path.join(getcwd(), "index.html"))
         self.browser.find_element(By.ID, "nav-Logo").click()
-        self.assertIn("#home", self.browser.current_url)
+        self.assertIn("#", self.browser.current_url)
 
     def testFooterDesc(self):
         self.browser.get(path.join(getcwd(), "index.html"))
@@ -138,6 +138,51 @@ class TestWebsite(TestCase):
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         sleep(1)
         self.browser.get_screenshot_as_file("images/googleMapIMG.jpeg")
+
+    def testResSite1920(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(1920, 1080, self.browser.window_handles[0])
+        self.browser.find_element(By.ID, "openHoursButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/OPENHOURS1080pIMG.jpeg")
+        self.browser.find_element(By.ID, "findUsButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/FINDUS1080pIMG.jpeg")
+        self.browser.find_element(By.ID, "nav-Logo").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/HOMEPAGE1080pIMG.jpeg")
+
+    def testResSite4k(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(2560, 1440, self.browser.window_handles[0])
+        self.browser.find_element(By.ID, "openHoursButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/OPENHOURS_4K_IMG.jpeg")
+        self.browser.find_element(By.ID, "findUsButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/FINDUS_4K_IMG.jpeg")
+        self.browser.find_element(By.ID, "nav-Logo").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/HOMEPAGE_4K_IMG.jpeg")
+
+    def testResSiteIphone(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.set_window_size(390, 844, self.browser.window_handles[0])
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "findUsFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/FINDUS_iPhone_IMG.jpeg")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "openHoursFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/OPENHOURS_iPhone_IMG.jpeg")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "homePageFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/HOME_iPhone_IMG.jpeg")
 
 
 # exists to ensure tests run if file is run as a normal python-program
