@@ -162,6 +162,10 @@ h1,
 .fu-info {
     font-size: 2rem;
 }
+.fu-info-link{
+    color: black;
+    text-decoration: underline;
+}
 
 #facebook {
     font-size: 4rem;
@@ -276,22 +280,24 @@ h6 {
 
     #facebook {
         font-size: 4rem;
-        background-color: white;
+        
         border-radius: 50%;
         float: left;
-        margin-left: 50vh;
+        margin-left: 10vh;
+        color: black;
     }
-
+    
     #twitter {
         font-size: 4rem;
         margin-right: 1%;
+        color: black;
     }
-
+    
     #instagram {
         font-size: 4rem;
         float: right;
-        margin-right: 50vh;
-        color: purple;
+        margin-right: 10vh;
+        color: rgb(0, 0, 0);
     }
 
     #instagram:hover,
