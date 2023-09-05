@@ -137,7 +137,7 @@ class TestWebsite(TestCase):
         )
         self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         sleep(1)
-        self.browser.get_screenshot_as_file("images/googleMapIMG.jpeg")
+        self.browser.get_screenshot_as_file("testIMG/googleMapIMG.jpeg")
 
     def testResSite1920(self):
         self.browser.get(path.join(getcwd(), "index.html"))
