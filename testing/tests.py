@@ -92,6 +92,41 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "findUsButton").click()
         self.assertIn("#hittaoss", self.browser.current_url)
 
+    def testMenuButton(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.find_element(By.ID, "menuButton").click()
+        self.assertIn("#meny", self.browser.current_url)
+
+    def testMenuPizza(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.CLASS_NAME, "menudiv")
+        self.assertIn("Margherita", menu.text)
+        self.assertIn("Vesuvio", menu.text)
+        self.assertIn("Calzone", menu.text)
+        self.assertIn("Capricciosa", menu.text)
+        self.assertIn("Hawaii", menu.text)
+        self.assertIn("Pompei", menu.text)
+        self.assertIn("La Casa", menu.text)
+
+    def testMenuIngredients(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.CLASS_NAME, "menudiv")
+        self.assertIn("Mozzarella", menu.text)
+        self.assertIn("Ost, skinka", menu.text)
+        self.assertIn("Inbakad med skinka", menu.text)
+        self.assertIn("Skinka, champinjoner", menu.text)
+        self.assertIn("Skinka, ananas", menu.text)
+        self.assertIn("Bacon, rödlök, ägg, curry", menu.text)
+        self.assertIn("Champinjoner, räkor, skinka", menu.text)
+
+    def testMenuPrices(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.CLASS_NAME, "menudiv")
+        self.assertIn("80 kr", menu.text)
+        self.assertIn("85 kr", menu.text)
+        self.assertIn("90 kr", menu.text)
+        self.assertIn("95 kr", menu.text)
+
     def testOpenHours(self):
         self.browser.get(path.join(getcwd(), "index.html"))
         paragraph = self.browser.find_element(By.ID, "openHoursInfo")
