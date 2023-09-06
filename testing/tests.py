@@ -92,6 +92,41 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "findUsButton").click()
         self.assertIn("#hittaoss", self.browser.current_url)
 
+    def testMenuButton(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        self.browser.find_element(By.ID, "menuButton").click()
+        self.assertIn("#meny", self.browser.current_url)
+
+    def testMenuPizza(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.ID, "meny")
+        self.assertIn("Margherita", menu.text)
+        self.assertIn("Vesuvio", menu.text)
+        self.assertIn("Calzone", menu.text)
+        self.assertIn("Capricciosa", menu.text)
+        self.assertIn("Hawaii", menu.text)
+        self.assertIn("Pompei", menu.text)
+        self.assertIn("La Casa", menu.text)
+
+    def testMenuIngredients(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.ID, "meny")
+        self.assertIn("Mozzarella", menu.text)
+        self.assertIn("Ost, skinka", menu.text)
+        self.assertIn("Inbakad med skinka", menu.text)
+        self.assertIn("Skinka, champinjoner", menu.text)
+        self.assertIn("Skinka, ananas", menu.text)
+        self.assertIn("Bacon, rödlök, ägg, curry", menu.text)
+        self.assertIn("Champinjoner, räkor, skinka", menu.text)
+
+    def testMenuPrices(self):
+        self.browser.get(path.join(getcwd(), "index.html"))
+        menu = self.browser.find_element(By.ID, "meny")
+        self.assertIn("80 kr", menu.text)
+        self.assertIn("85 kr", menu.text)
+        self.assertIn("90 kr", menu.text)
+        self.assertIn("95 kr", menu.text)
+
     def testOpenHours(self):
         self.browser.get(path.join(getcwd(), "index.html"))
         paragraph = self.browser.find_element(By.ID, "openHoursInfo")
@@ -151,6 +186,9 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "nav-Logo").click()
         sleep(1)
         self.browser.get_screenshot_as_file("testIMG/1080P/HOMEPAGE1080pIMG.jpeg")
+        self.browser.find_element(By.ID, "menuButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/1080P/MENU1080pIMG.jpeg")
 
     def testResSite4k(self):
         self.browser.get(path.join(getcwd(), "index.html"))
@@ -164,6 +202,9 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "nav-Logo").click()
         sleep(1)
         self.browser.get_screenshot_as_file("testIMG/4K/HOMEPAGE_4K_IMG.jpeg")
+        self.browser.find_element(By.ID, "menuButton").click()
+        sleep(1)
+        self.browser.get_screenshot_as_file("testIMG/4K/MENU_4K_IMG.jpeg")
 
     def testResSiteIphone(self):
         self.browser.get(path.join(getcwd(), "index.html"))
@@ -183,6 +224,11 @@ class TestWebsite(TestCase):
         self.browser.find_element(By.ID, "homePageFooter").click()
         sleep(2)
         self.browser.get_screenshot_as_file("testIMG/Phone/HOME_iPhone_IMG.jpeg")
+        self.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        sleep(2)
+        self.browser.find_element(By.ID, "menuFooter").click()
+        sleep(2)
+        self.browser.get_screenshot_as_file("testIMG/Phone/menu_iPhone_IMG.jpeg")
 
     def testValidatorHTML(self):
         self.browser.get("https://validator.w3.org/#validate_by_upload")

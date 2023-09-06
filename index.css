@@ -87,6 +87,7 @@ h1,
 .openHours,
 .navbar-brand,
 .nav-link,
+span,
 .findUs {
     font-family: 'Racing Sans One', cursive;
 }
@@ -116,7 +117,54 @@ h1,
     padding-top: 100px;
 }
 
-/* The following styling is for the Find Us page */
+/* The following styling is for the menu */
+#meny {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(images/pizzamenubackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#menuTitle {
+    padding-top: 80px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#pizzaContainer {
+    color: white;
+    background-color: rgba(5, 5, 5, 0.315);
+    min-height: 70vh;
+    width: 40vw;
+    margin-top: 5vh;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    border-color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pizzaRow {
+    padding-left: 3vw;
+}
+
+.pizzaName {
+    font-size: 2rem;
+}
+
+#menuDesc {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.price {
+    font-size: 1.5rem;
+    padding-left: 100px;
+}
+
+/* The following styling is for the find us page */
 .findUs {
     width: 100%;
     min-height: 100vh;
@@ -132,7 +180,7 @@ h1,
     border-color: rgb(255, 255, 255);
     border-width: 5px;
     border-radius: 5%;
-    border-style: outset;
+    border-style: solid;
     width: 40vw;
     height: 60vh;
 }
@@ -174,7 +222,6 @@ h1,
 
 #facebook {
     font-size: 4rem;
-
     border-radius: 50%;
     float: left;
     margin-left: 10vh;
@@ -258,6 +305,22 @@ h6 {
         padding-top: 30px;
     }
 
+    /* This is in swedish since it is visible to the public */
+    #meny {
+        min-height: 115vh;
+    }
+
+    #pizzaContainer {
+        width: 60vw;
+        min-height: 80vh;
+        padding-bottom: 30px;
+    }
+
+    .price {
+        padding-left: 5vw;
+    }
+
+    /* This is in swedish since it is visible to the public */
     #hittaoss {
         min-height: 100vh;
     }
@@ -283,7 +346,6 @@ h6 {
 
     #googleMap {
         margin-right: 6vw;
-
     }
 
     .fu-info-main {
@@ -299,7 +361,6 @@ h6 {
 
     #facebook {
         font-size: 4rem;
-
         border-radius: 50%;
         float: left;
         margin-left: 10vh;
@@ -385,6 +446,33 @@ h6 {
     }
 
     /* This is in swedish since it is visible to the public */
+    #meny {
+        min-height: 115vh;
+    }
+
+    #pizzaContainer {
+        width: 100vw;
+        min-height: 80vh;
+        padding-bottom: 30px;
+        border-radius: 0;
+        border-width: 1px;
+        border-style: none;
+        background-color: #00000025;
+    }
+
+    #menuDesc {
+        font-size: 1.2rem;
+    }
+
+    .pizzaRow {
+        padding-left: 40px;
+    }
+
+    .price {
+        padding-left: 0px;
+    }
+
+    /* This is in swedish since it is visible to the public */
     #hittaoss {
         height: 150vh;
     }
@@ -444,8 +532,6 @@ h6 {
     #facebook:hover {
         font-size: 3.2rem;
         transition: .1s;
-
-
     }
 
     a:hover {
