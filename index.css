@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Racing Sans One';
     src: url(RacingSansOne-Regular.ttf);
-  }
+}
 
 /* Global styling */
 html {
@@ -53,6 +53,7 @@ header {
     width: 100vw;
     opacity: 0.7;
     height: 100vh;
+    margin-bottom: 0;
 }
 
 .description {
@@ -91,31 +92,34 @@ h1,
 }
 
 /* The following styling is for the Open Hours Page */
+
+
 .openHours {
     text-align: center;
     width: 100%;
-    height: 100vh;
     background-image: url('images/openhoursbackground.jpg');
     background-size: cover;
     background-position: center;
-    padding-top: 70px;
+    margin-top: 0;
+    min-height: 100vh;
 }
 
 #openHoursInfo {
     font-size: 4rem;
     color: #ffffff;
-    padding-bottom: 40px;
-    margin: 5%;
+    padding-top: 80px;
+    margin-bottom: 0;
 }
 
 #openHoursTitle {
     color: #818080;
+    padding-top: 100px;
 }
 
-/* The follwing styling is for the Find Us page */
+/* The following styling is for the Find Us page */
 .findUs {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('images/pizzaoven.jpg');
     background-size: cover;
     background-position: center;
@@ -135,13 +139,13 @@ h1,
 
 #findUsTitle {
     text-align: center;
-    color: #ffffff;
+    color: #818080;
 }
 
 #infoBox {
     background-color: rgba(233, 233, 233, 0.434);
     margin-right: 10vh;
-    height: 60vh;
+    min-height: 60vh;
     width: 40vw;
     float: right;
     margin-top: 5vh;
@@ -162,14 +166,15 @@ h1,
 .fu-info {
     font-size: 2rem;
 }
-.fu-info-link{
+
+.fu-info-link {
     color: black;
     text-decoration: underline;
 }
 
 #facebook {
     font-size: 4rem;
-    
+
     border-radius: 50%;
     float: left;
     margin-left: 10vh;
@@ -204,9 +209,10 @@ a:hover {
 
 /* Footer styling */
 .footer {
-    color: rgb(161, 159, 159);   
+    color: rgb(161, 159, 159);
 }
-.footerInfo{
+
+.footerInfo {
     color: rgb(161, 159, 159);
     text-decoration: underline;
 }
@@ -216,7 +222,7 @@ h6 {
 }
 
 /* The following code is for 2k-500p resolutions */
-@media (max-width: 2000px) and (min-width:500px) { 
+@media (max-width: 2000px) and (min-width:500px) {
 
     .navbar-brand,
     .nav-link {
@@ -224,7 +230,8 @@ h6 {
         cursor: pointer;
         font-size: 2rem;
     }
-    .nav-link{
+
+    .nav-link {
         margin-right: 40vw;
     }
 
@@ -240,25 +247,43 @@ h6 {
         font-weight: bold;
     }
 
+    #openHoursTitle {
+        color: #818080;
+        padding-top: 80px;
+    }
+
+    #openHoursInfo {
+        font-size: 2.5vw;
+        color: #fff;
+        padding-top: 30px;
+    }
+
     #hittaoss {
-        height: 150vh;
+        min-height: 100vh;
     }
 
     #infoBox {
-        width: 90vw;
-        height: 65vh;
-        margin-right: 5vw;
+        margin-bottom: 10px;
+        position: relative;
+        float: none;
+        margin-left: 6vw;
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .flex-child {
+        flex: 1;
+    }
+
+    .flex-child:first-child {
+        margin-right: 20px;
     }
 
     #googleMap {
-        width: 100vw;
-        margin-top: 6vh;
-        margin-left: 0vh;
+        margin-right: 6vw;
 
-        border-color: rgb(0, 0, 0);
-        border-width: 0px;
-        border-radius: 2%;
-        border-style: outset;
     }
 
     .fu-info-main {
@@ -272,27 +297,21 @@ h6 {
         font-size: 2rem;
     }
 
-    #openHoursInfo {
-        font-size: 3.5vw;
-        color: #fff;
-        padding-bottom: 40px;
-    }
-
     #facebook {
         font-size: 4rem;
-        
+
         border-radius: 50%;
         float: left;
         margin-left: 10vh;
         color: black;
     }
-    
+
     #twitter {
         font-size: 4rem;
         margin-right: 1%;
         color: black;
     }
-    
+
     #instagram {
         font-size: 4rem;
         float: right;
@@ -303,7 +322,7 @@ h6 {
     #instagram:hover,
     #twitter:hover,
     #facebook:hover {
-        font-size: 3.2rem;
+        font-size: 4.2rem;
         transition: .1s;
 
     }
@@ -318,8 +337,10 @@ h6 {
     .nav-link {
         font-family: 'Racing Sans One', cursive;
     }
-    .footer{
+
+    .footer {
         font-size: 1.1rem;
+        margin-top: 10px;
     }
 }
 
@@ -423,7 +444,7 @@ h6 {
     #facebook:hover {
         font-size: 3.2rem;
         transition: .1s;
-       
+
 
     }
 
