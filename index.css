@@ -468,6 +468,10 @@ h6 {
         padding-left: 40px;
     }
 
+    .row {
+        max-width: 100vw;
+    }
+
     .price {
         padding-left: 0px;
     }
