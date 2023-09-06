@@ -121,7 +121,7 @@ span,
 #meny {
     width: 100vw;
     min-height: 100vh;
-    background-image: url(images/pizzamenubackground.jpg);
+    background-image: url('images/pizzamenubackground.jpg');
     background-size: cover;
     background-position: center;
 }
