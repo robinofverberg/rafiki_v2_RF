@@ -160,11 +160,11 @@ span,
 }
 
 .price {
-    padding-left: 100px;
     font-size: 1.5rem;
+    padding-left: 100px;
 }
 
-/* The following styling is for the Find Us page */
+/* The following styling is for the find us page */
 .findUs {
     width: 100%;
     min-height: 100vh;
@@ -222,7 +222,6 @@ span,
 
 #facebook {
     font-size: 4rem;
-
     border-radius: 50%;
     float: left;
     margin-left: 10vh;
@@ -306,6 +305,7 @@ h6 {
         padding-top: 30px;
     }
 
+    /* This is in swedish since it is visible to the public */
     #meny {
         min-height: 115vh;
     }
@@ -316,6 +316,11 @@ h6 {
         padding-bottom: 30px;
     }
 
+    .price {
+        padding-left: 130px;
+    }
+
+    /* This is in swedish since it is visible to the public */
     #hittaoss {
         min-height: 100vh;
     }
@@ -341,7 +346,6 @@ h6 {
 
     #googleMap {
         margin-right: 6vw;
-
     }
 
     .fu-info-main {
@@ -357,7 +361,6 @@ h6 {
 
     #facebook {
         font-size: 4rem;
-
         border-radius: 50%;
         float: left;
         margin-left: 10vh;
@@ -443,6 +446,33 @@ h6 {
     }
 
     /* This is in swedish since it is visible to the public */
+    #meny {
+        min-height: 115vh;
+    }
+
+    #pizzaContainer {
+        width: 100vw;
+        min-height: 80vh;
+        padding-bottom: 30px;
+        border-radius: 0;
+        border-width: 1px;
+        border-style: none;
+        background-color: #00000025;
+    }
+
+    #menuDesc {
+        font-size: 1.2rem;
+    }
+
+    .pizzaRow {
+        padding-left: 40px;
+    }
+
+    .price {
+        padding-left: 0px;
+    }
+
+    /* This is in swedish since it is visible to the public */
     #hittaoss {
         height: 150vh;
     }
@@ -502,8 +532,6 @@ h6 {
     #facebook:hover {
         font-size: 3.2rem;
         transition: .1s;
-
-
     }
 
     a:hover {
