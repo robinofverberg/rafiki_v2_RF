@@ -87,6 +87,7 @@ h1,
 .openHours,
 .navbar-brand,
 .nav-link,
+span,
 .findUs {
     font-family: 'Racing Sans One', cursive;
 }
@@ -114,6 +115,57 @@ h1,
 #openHoursTitle {
     color: #818080;
     padding-top: 100px;
+}
+
+/* The following styling is for the menu */
+#meny {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(images/pizzamenubackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#menuTitle {
+    padding-top: 80px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#pizzaContainer {
+    color: white;
+    background-color: rgba(5, 5, 5, 0.315);
+    min-height: 70vh;
+    width: 40vw;
+    margin-top: 5vh;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    border-color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pizzaRow {
+    padding-left: 3vw;
+}
+
+.pizzaName {
+    font-size: 2rem;
+}
+
+#menuDesc {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+/* .pizzaDesc {
+
+} */
+
+.price {
+    padding-left: 100px;
+    font-size: 1.5rem;
 }
 
 /* The following styling is for the Find Us page */
