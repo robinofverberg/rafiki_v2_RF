@@ -100,6 +100,7 @@ class TestWebsite(TestCase):
     def testMenuPizza(self):
         self.browser.get(path.join(getcwd(), "index.html"))
         menu = self.browser.find_element(By.ID, "meny")
+        self.assertIn("Tomatsås och ost ingår i alla pizzor", menu.text)
         self.assertIn("Margherita", menu.text)
         self.assertIn("Vesuvio", menu.text)
         self.assertIn("Calzone", menu.text)
