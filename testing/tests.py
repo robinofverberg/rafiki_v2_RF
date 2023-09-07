@@ -139,9 +139,10 @@ class TestWebsite(TestCase):
     def testFooterLinks(self):
         self.browser.get(path.join(getcwd(), "index.html"))
         footer = self.browser.find_element(By.CLASS_NAME, "footer")
+        self.assertIn("Hem", footer.text)
         self.assertIn("Öppettider", footer.text)
+        self.assertIn("Meny", footer.text)
         self.assertIn("Hitta oss", footer.text)
-        self.assertIn("Rafiki", footer.text)
 
     def testHomePage(self):
         self.browser.get(path.join(getcwd(), "index.html"))

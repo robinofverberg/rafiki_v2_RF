@@ -21,7 +21,7 @@ body {
     background: #000000;
     top: 0;
     position: sticky;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .nav-link,
@@ -106,14 +106,14 @@ span,
 }
 
 #openHoursInfo {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #ffffff;
     padding-top: 80px;
     margin-bottom: 0;
 }
 
 #openHoursTitle {
-    color: #818080;
+    color: #ffffff;
     padding-top: 100px;
 }
 
@@ -121,6 +121,7 @@ span,
 #meny {
     width: 100vw;
     min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.808);
     background-image: url('images/pizzamenubackground.jpg');
     background-size: cover;
     background-position: center;
@@ -134,14 +135,12 @@ span,
 
 #pizzaContainer {
     color: white;
-    background-color: rgba(5, 5, 5, 0.315);
+    background-color: rgba(0, 0, 0, 0.486);
     min-height: 70vh;
     width: 40vw;
     margin-top: 5vh;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 20px;
-    border-color: #000000;
+    border-radius: 5%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     margin-left: auto;
     margin-right: auto;
 }
@@ -177,17 +176,16 @@ span,
 #googleMap {
     margin-top: 5vh;
     margin-left: 10vh;
-    border-color: rgb(255, 255, 255);
-    border-width: 5px;
-    border-radius: 5%;
-    border-style: solid;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-style: none;
     width: 40vw;
+    border-radius: 25px;
     height: 60vh;
 }
 
 #findUsTitle {
     text-align: center;
-    color: #818080;
+    color: #ffffff;
 }
 
 #infoBox {
@@ -197,16 +195,14 @@ span,
     width: 40vw;
     float: right;
     margin-top: 5vh;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 5%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 25px;
     border-color: #fff;
     text-align: center;
 }
 
 .fu-info-main {
-    font-size: 3rem;
-    text-decoration: underline;
+    font-size: 4rem;
     font-weight: bold;
     margin-top: 2vh;
 }
@@ -295,12 +291,12 @@ h6 {
     }
 
     #openHoursTitle {
-        color: #818080;
+        color: #ffffff;
         padding-top: 80px;
     }
 
     #openHoursInfo {
-        font-size: 2.5vw;
+        font-size: 2vw;
         color: #fff;
         padding-top: 30px;
     }
@@ -346,11 +342,11 @@ h6 {
 
     #googleMap {
         margin-right: 6vw;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
     .fu-info-main {
         font-size: 3rem;
-        text-decoration: underline;
         font-weight: bold;
         margin-top: 2vh;
     }
@@ -409,7 +405,6 @@ h6 {
 @media (max-width: 500px) {
     .navbar {
         z-index: 900;
-        background: #000000c5;
         top: 0;
         position: sticky;
     }
@@ -440,7 +435,7 @@ h6 {
     }
 
     #openHoursInfo {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: #fff;
         padding-bottom: 40px;
     }
@@ -457,7 +452,7 @@ h6 {
         border-radius: 0;
         border-width: 1px;
         border-style: none;
-        background-color: #00000025;
+        background-color: #00000000;
     }
 
     #menuDesc {
@@ -491,16 +486,12 @@ h6 {
         width: 100vw;
         margin-top: 6vh;
         margin-left: 0vh;
-
         border-color: rgb(0, 0, 0);
-        border-width: 0px;
         border-radius: 2%;
-        border-style: outset;
     }
 
     .fu-info-main {
         font-size: 2rem;
-        text-decoration: underline;
         font-weight: bold;
         margin-top: 2vh;
     }
