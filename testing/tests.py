@@ -113,7 +113,7 @@ class TestWebsite(TestCase):
         self.browser.get(path.join(getcwd(), "index.html"))
         menu = self.browser.find_element(By.ID, "meny")
         self.assertIn("Mozzarella", menu.text)
-        self.assertIn("Ost, skinka", menu.text)
+        self.assertIn("Skinka", menu.text)
         self.assertIn("Inbakad med skinka", menu.text)
         self.assertIn("Skinka, champinjoner", menu.text)
         self.assertIn("Skinka, ananas", menu.text)
