@@ -1,14 +1,16 @@
 # Rafiki
 Repository for pizzeria Rafiki 2023-2024
+
+[Link to live server](https://ntig-uppsala.github.io/rafiki/)
  
-Our website uses bootstrap v5.3.1 for CSS. Download bootstrap at [bootstrap](https://getbootstrap.com/)
+Our website uses bootstrap Version 5.3.1 for CSS. Download bootstrap at [bootstrap.com](https://getbootstrap.com/)
 ### Testing
 Our website uses the software Selenium and Python's unittest library to run tests. 
 
-Tests are run from the file [main-branch]testing/testrafiki.py
+Tests are run from the file [main-branch]testing/tests.py
 
 ### Coding standard
-- All variables are in English, start with lowercase letters and subsequent words start with uppercase letters.
+- All variables are in English, start with lowercase letters and subsequent words start with uppercase letters (camelCase). Eventual snake_case is from/for bootstrap.
 - We use four blank spaces for indentation.
 - All test functions have to start with "test".
 - English file names only contain lowercase letters.
